@@ -56,10 +56,8 @@
     "ts-generator": "^0.0.8"
   },
   "scripts": {
-    "prepare": "patch-package",
     "prepublishOnly": "yarn build",
     "build": "rm -rf ./dist && tsc -p ./tsconfig.production.json && cp -R ./lib/targets/legacy/runtime ./dist/targets/legacy/",
-    "postbuild": "chmod +x ./dist/cli/cli.js",
     "lint": "yarn formatting && yarn tslint",
     "lint:fix": "yarn tslint:fix && yarn formatting:fix",
     "tslint": "tslint -c ./tslint.json --project ./tsconfig.json --format stylish",
